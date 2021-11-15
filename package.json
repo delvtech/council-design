@@ -81,8 +81,8 @@
     "copy-testnet": "npm run _copy-testnet-addresses && npm run _copy-testnet-tokenlist",
     "update-elf-council-typechain": "npm install git+https://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:x-oauth-basic@github.com/element-fi/elf-council-typechain.git",
     "update-elf-council-proposals": "npm install git+https://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:x-oauth-basic@github.com/element-fi/elf-council-proposals.git",
-    "storybook": "start-storybook -s ./sb-public -p 6006",
-    "build-storybook": "build-storybook -s ./sb-public -o ./storybook-build"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "version": "0.1.0"
 }
