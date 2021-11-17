@@ -1,12 +1,17 @@
+import { Meta, Story } from "@storybook/react";
 import React, { useState } from "react";
-import { TransactionAlerts, TransactionAlertsVariant } from "../components";
+import {
+	TransactionAlerts,
+	TransactionAlertsProps,
+	TransactionAlertsVariant,
+} from "../components";
 
 export default {
 	title: "TransactionAlerts",
 	component: TransactionAlerts,
-};
+} as Meta;
 
-const TransactionAlertsTemplate = (args) => {
+const TransactionAlertsTemplate: Story<TransactionAlertsProps> = (args) => {
 	const [clicked, setClicked] = useState(false);
 
 	return (
@@ -22,7 +27,9 @@ const TransactionAlertsTemplate = (args) => {
 	);
 };
 
-const Template = (args) => <TransactionAlertsTemplate {...args} />;
+const Template: Story<TransactionAlertsProps> = (args) => (
+	<TransactionAlertsTemplate {...args} />
+);
 
 export const ApproveTransaction = Template.bind({});
 ApproveTransaction.args = {

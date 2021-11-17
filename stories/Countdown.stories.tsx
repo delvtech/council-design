@@ -1,10 +1,11 @@
+import { Meta, Story } from "@storybook/react";
 import React, { useState } from "react";
-import { Button, Countdown } from "../components";
+import { Button, Countdown, CountdownProps } from "../components";
 
 export default {
 	title: "Countdown",
 	component: Countdown,
-};
+} as Meta;
 
 const TemplateCompnent = ({
 	hours,
@@ -46,7 +47,9 @@ const TemplateCompnent = ({
 	);
 };
 
-const Template = (args) => <TemplateCompnent {...args} />;
+const Template: Story<CountdownProps> = (args) => (
+	<TemplateCompnent {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

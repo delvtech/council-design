@@ -7,29 +7,28 @@ export default function Sidebar({
 	className,
 	...props
 }: SidebarProps) {
+	const sidebarClasses = [
+		"border-2",
+		"border-solid",
+		"border-brandLightBlue",
+		"bg-white",
+		"w-max",
+		"min-h-screen",
+		"px-11",
+		"py-7",
+		"flex",
+		"flex-col",
+	];
+	const imgClasses = ["mb-7"];
+
 	return (
 		<aside
-			className={`
-			border-2
-			border-solid
-			border-brandLightBlue
-			bg-white
-			w-max
-			h-screen
-			px-11
-			py-7
-			flex
-			flex-col
-			
-			${className || ""}
-			`}
+			className={`${sidebarClasses.join(" ")} ${className || ""}`}
 			{...props}
 		>
 			<img
 				src="/assets/council-logo.png"
-				className={`
-				mb-7
-				`}
+				className={`${imgClasses.join(" ")}`}
 			/>
 			{children}
 		</aside>

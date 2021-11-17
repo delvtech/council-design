@@ -16,7 +16,7 @@ import {
 } from ".";
 import { IconTypes } from "./propType";
 
-export const getIconByName = (name: IconTypes) => {
+export const getIconByName = (name: IconTypes | string) => {
 	switch (name) {
 		case "ArrowForward":
 			return ArrowForward;

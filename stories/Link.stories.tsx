@@ -1,17 +1,18 @@
-import { Link } from "../components";
+import { Meta, Story } from "@storybook/react";
+import { Link, LinkProps } from "../components";
 
 export default {
 	title: "Link",
 	component: Link,
-};
+} as Meta;
 
-const Template = (args) => (
+const Template: Story<LinkProps> = (args) => (
 	<Link href="#" {...args}>
 		Click Me
 	</Link>
 );
 
-const ExternalLinkTemplate = (args) => (
+const ExternalLinkTemplate: Story<LinkProps> = (args) => (
 	<Link href="https://www.google.com" externalLink {...args}>
 		Click Me
 	</Link>

@@ -22,24 +22,22 @@ export default function Card({
 	const isOutlined = variant === CardVariant.Outlined;
 	const isDefault = !(isPrimary || isOutlined);
 
-	return (
-		<div
-			className={`
-				box-border
-				py-4
-				px-6
-				rounded-regular
-				border
+	const classes = [
+		"box-border",
+		"py-4",
+		"px-6",
+		"rounded-regular",
+		"border",
+		...(shadow ? ["shadow-md"] : []),
+		...(isPrimary
+			? ["bg-principalRoyalBlue", "border-principalRoyalBlue"]
+			: []),
+		...(isOutlined ? ["bg-white", "border-principalRoyalBlue"] : []),
+		...(isDefault ? ["bg-white", "border-white"] : []),
+	];
 
-				${shadow ? "shadow-md" : ""}
-				${isPrimary ? "bg-principalRoyalBlue border-principalRoyalBlue" : ""}
-				${isOutlined ? "bg-white border-principalRoyalBlue" : ""}
-				${isDefault ? "bg-white border-white" : ""}
-				
-				${className || ""}
-				`}
-			{...props}
-		>
+	return (
+		<div className={`${classes.join(" ")} ${className || ""}`} {...props}>
 			{children}
 		</div>
 	);

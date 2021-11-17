@@ -1,19 +1,29 @@
-import { useEffect, useState } from "react";
-import { DropDown, DropDownItem, DropDownVariant } from "../components";
+import { Meta, Story } from "@storybook/react";
+import { useState } from "react";
+import {
+	DropDown,
+	DropDownProps,
+	DropDownItem,
+	DropDownVariant,
+} from "../components";
 
 export default {
 	title: "DropDown",
 	component: DropDown,
-};
+} as Meta;
 
-const GradientTemplateComponent = (args) => {
-	const [currentSelectionId, setCurrentSelectionId] = useState(null);
+const GradientTemplateComponent: Story<DropDownProps> = ({
+	title,
+	...args
+}) => {
+	const [currentSelectionId, setCurrentSelectionId] = useState("");
 
 	return (
 		<>
 			<DropDown
 				variant={DropDownVariant.Gradient}
 				title="Vote"
+				value={currentSelectionId}
 				onValueChange={(value) => setCurrentSelectionId(value)}
 				{...args}
 			>
@@ -41,7 +51,10 @@ const GradientTemplateComponent = (args) => {
 	);
 };
 
-const TransparentTemplateComponent = (args) => {
+const TransparentTemplateComponent: Story<DropDownProps> = ({
+	title,
+	...args
+}) => {
 	const [currentGas, setCurrentGas] = useState("201");
 
 	return (
@@ -65,7 +78,9 @@ const TransparentTemplateComponent = (args) => {
 	);
 };
 
-const Template = (args) => <GradientTemplateComponent {...args} />;
+const Template: Story<DropDownProps> = (args) => (
+	<GradientTemplateComponent {...args} />
+);
 
 export const Gradient = Template.bind({});
 Gradient.args = {};

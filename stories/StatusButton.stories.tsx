@@ -1,11 +1,12 @@
-import { StatusButton, ButtonStatus } from "../components";
+import { Meta, Story } from "@storybook/react";
+import { StatusButton, ButtonStatus, StatusButtonProps } from "../components";
 
 export default {
 	title: "StatusButton",
 	component: StatusButton,
-};
+} as Meta;
 
-const Template = (args) => <StatusButton {...args} />;
+const Template: Story<StatusButtonProps> = (args) => <StatusButton {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

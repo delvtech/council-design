@@ -1,28 +1,43 @@
-import { Icons } from "../components";
+import { Meta, Story } from "@storybook/react";
+import {
+	ArrowForward,
+	Close,
+	Copy,
+	DownArrow,
+	HourGlass,
+	HowToVote,
+	OpenInNewTab,
+	Twitter,
+	Help,
+	LocalGas,
+	Refresh,
+	DoneAll,
+	Done,
+	Warning,
+} from "../icons";
 
 export default {
 	title: "Icons",
-	component: Icons,
-};
+} as Meta;
 
-const CollectionTemplate = (args) => (
+const CollectionTemplate: Story = () => (
 	<>
 		<div className="bg-black fixed top-0 left-0 right-0 bottom-0" />
 		<div className="grid grid-cols-6 gap-x-2 gap-y-20 relative z-10 justify-items-center items-center my-4">
-			<Icons.ArrowForward />
-			<Icons.Close />
-			<Icons.Copy />
-			<Icons.DownArrow />
-			<Icons.HourGlass />
-			<Icons.HowToVote />
-			<Icons.OpenInNewTab />
-			<Icons.Twitter />
-			<Icons.Help />
-			<Icons.LocalGas />
-			<Icons.Refresh />
-			<Icons.DoneAll />
-			<Icons.Done />
-			<Icons.Warning />
+			<ArrowForward />
+			<Close />
+			<Copy />
+			<DownArrow />
+			<HourGlass />
+			<HowToVote />
+			<OpenInNewTab />
+			<Twitter />
+			<Help />
+			<LocalGas />
+			<Refresh />
+			<DoneAll />
+			<Done />
+			<Warning />
 		</div>
 
 		<div className="mt-20 relative z-10">
@@ -37,19 +52,17 @@ const CollectionTemplate = (args) => (
 	</>
 );
 
-const CustomConfigTemplate = (args) => (
+const CustomConfigTemplate: Story = () => (
 	<>
 		<div className="bg-black fixed top-0 left-0 right-0 bottom-0" />
 		<div className="grid grid-cols-3 gap-3 relative z-10 justify-items-center items-center my-4">
-			<Icons.ArrowForward fill={"red"} />
-			<Icons.Copy style={{ height: "40px", width: "40px" }} />
-			<Icons.DoneAll className="opacity-30" />
+			<ArrowForward fill={"red"} />
+			<Copy style={{ height: "40px", width: "40px" }} />
+			<DoneAll className="opacity-30" />
 		</div>
 	</>
 );
 
 export const Collection = CollectionTemplate.bind({});
-Collection.args = {};
 
 export const CustomConfiguration = CustomConfigTemplate.bind({});
-CustomConfiguration.args = {};

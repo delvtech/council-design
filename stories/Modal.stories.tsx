@@ -1,23 +1,24 @@
+import { Meta, Story } from "@storybook/react";
 import { useState } from "react";
 import { Button, Modal } from "../components";
 
 export default {
 	title: "Modal",
 	component: Modal,
-};
+} as Meta;
+
+interface ModalTemplateProps {
+	text: string;
+}
 
 const loremText = `
 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
 Reiciendis debitis corporis ea? Facere aut dicta maiores
 consequatur nam doloribus nulla consectetur quasi cupiditate
-quo, dolor minus ipsum natus quis nemo! Lorem ipsum dolor sit,
-amet consectetur adipisicing elit. Reiciendis debitis corporis
-ea? Facere aut dicta maiores consequatur nam doloribus nulla
-consectetur quasi cupiditate quo, dolor minus ipsum natus quis
-nemo! 
+quo, dolor minus ipsum natus quis nemo!
 `;
 
-const TemplateComponent = ({ text }: { text: string }) => {
+const TemplateComponent = ({ text }: ModalTemplateProps) => {
 	const [open, setOpen] = useState(false);
 
 	return (
@@ -30,7 +31,9 @@ const TemplateComponent = ({ text }: { text: string }) => {
 	);
 };
 
-const Template = (args) => <TemplateComponent {...args} />;
+const Template: Story<ModalTemplateProps> = (args) => (
+	<TemplateComponent {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {
@@ -39,5 +42,5 @@ Default.args = {
 
 export const LongText = Template.bind({});
 LongText.args = {
-	text: loremText.repeat(10),
+	text: loremText.repeat(25),
 };

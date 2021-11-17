@@ -11,54 +11,40 @@ export default function Indicator({
 	children,
 	isActive,
 }: IndicatorProps) {
-	const color = accent ? "votingGreen" : "indianYellow";
+	const color = accent ? "votingGreen" : "goldYellow";
+
+	const indicatorRootClasses = ["relative", "inline-block"];
+	const indicatorPositionClasses = [
+		"absolute",
+		"flex",
+		"h-5",
+		"w-5",
+		"top-0",
+		"right-0",
+		"transform",
+		"translate-x-2",
+		"-translate-y-1.5",
+	];
+	const indicatorAnimClasses = [
+		"absolute",
+		"rounded-full",
+		"h-5",
+		"w-5",
+		`bg-${color}`,
+		"opacity-75",
+		"animate-ping",
+	];
+	const indicatorClasses = ["h-5", "w-5", `bg-${color}`, "rounded-full"];
+
 	return (
-		<span
-			className={`
-			relative
-			inline-block
-			`}
-		>
+		<span className={`${indicatorRootClasses.join(" ")}`}>
 			{children}
 
 			{isActive && (
-				<span
-					className={`
-					absolute
-					flex
-					h-5
-					w-5
-					top-0
-					right-0
-					transform
-					translate-x-2
-					-translate-y-1.5
-					`}
-				>
-					<span
-						className={`
-						absolute
-						rounded-full
-						h-5
-						w-5
-						bg-${color}
-						opacity-75
-						animate-ping
-						`}
-					/>
-					<span
-						className={`
-						h-5
-						w-5
-						bg-${color}
-						rounded-full
-						`}
-					/>
+				<span className={`${indicatorPositionClasses.join(" ")}`}>
+					<span className={`${indicatorAnimClasses.join(" ")}`} />
+					<span className={`${indicatorClasses.join(" ")}`} />
 				</span>
-				// <span className="flex h-3 w-3">
-				// 	<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
-				// 	<span className="relative inline-flex rounded-full h-5 w-3 bg-purple-500"></span>
-				// </span>
 			)}
 		</span>
 	);

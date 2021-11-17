@@ -1,22 +1,18 @@
 module.exports = {
-  // allows tailwind to tree shake all css not included in the files found in this array.
   purge: [
-    // .ts allow for long tailwind classes to be extract to their own files.
-    "./pages/**/*.ts",
-    "./pages/**/*.tsx",
-    // .ts allow for long tailwind classes to be extract to their own files.
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
+    "./components/**/*.ts",
+    "./components/**/*.tsx",
+    "./icons/**/*.ts",
+    "./icons/**/*.tsx",
+    "./stories/**/*.stories.tsx",
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false,
   theme: {
     extend: {
       animation: {
         slideIn: 'slideIn 0.25s ease-in-out 0s 1 forwards',
       },
       colors: {
-        // Colors taken from:
-        // https://www.figma.com/file/SRw9lvgMAasN5JaQrK0z4t/Governance?node-id=1040%3A1303
         yieldBlue: "#1568CA",
         yieldLightBlue: "#75C7EE",
         denimBlue: "#7FBEEA",
@@ -36,9 +32,9 @@ module.exports = {
         hackerSky: "#F1F5FE",
         appBackgroundLight: "#FAF9F9",
         textGrey: "#979797",
+        writersGrey: "#979797",
+        evergreen: "#4FBF67",
 
-        // Deprecated colors:
-        // Used this tool for color variants: https://material.io/resources/color
         brandLightBlue: {
           light: "#acffff",
           DEFAULT: "#78D3E2",
@@ -46,7 +42,6 @@ module.exports = {
         },
         brandDarkBlue: {
           light: "#588bf1",
-          // Deprecated: use principalRoyalBlue instead
           DEFAULT: "#005EBE",
           dark: "#00368d",
         },
@@ -77,5 +72,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [],
 };

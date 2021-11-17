@@ -1,17 +1,18 @@
-import { Button, Indicator } from "../components";
+import { Meta, Story } from "@storybook/react";
+import { Button, Indicator, IndicatorProps } from "../components";
 
 export default {
 	title: "Indicator",
 	component: Indicator,
-};
+} as Meta;
 
-const Template = (args) => (
+const Template: Story<IndicatorProps> = (args) => (
 	<Indicator {...args}>
 		<Button gradientButton>Click Me</Button>
 	</Indicator>
 );
 
-const AccentTemplate = (args) => (
+const AccentTemplate: Story<IndicatorProps> = (args) => (
 	<Indicator {...args}>
 		<Button>Click Me</Button>
 	</Indicator>

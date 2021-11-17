@@ -33,41 +33,44 @@ export default function StatusButton({
 	const isQueued = status === ButtonStatus.Queued;
 	const isDefault = status === ButtonStatus.Default;
 
+	const buttonClasses = [
+		"flex",
+		"items-center",
+		"justify-center",
+		"box-border",
+		"font-medium",
+		"rounded-regular",
+		"text-xs",
+		"border",
+		"border-solid",
+		...(isSuccess
+			? ["bg-votingGreen", "text-statusGreen", "border-votingGreen"]
+			: []),
+		...(isFailed
+			? ["bg-statusRed", "text-deepRed", "border-statusRed"]
+			: []),
+		...(isQueued
+			? ["text-principalRoyalBlue", "border-principalRoyalBlue"]
+			: []),
+		...(isDefault ? ["text-statusGreen", "border-votingGreen"] : []),
+	];
+	const markerClasses = [
+		"inline-block",
+		"rounded-full",
+		"mr-2",
+		...(isSuccess ? ["bg-statusGreen"] : []),
+		...(isFailed ? ["bg-deepRed"] : []),
+		...(isQueued ? ["bg-principalRoyalBlue"] : []),
+		...(isDefault ? ["bg-statusGreen"] : []),
+	];
+
 	return (
 		<button
-			className={`
-			flex
-			items-center
-			justify-center
-			box-border
-			font-medium
-			rounded-regular
-			text-xs
-			border
-			border-solid
-
-			${isSuccess ? "bg-votingGreen text-statusGreen border-votingGreen" : ""}
-			${isFailed ? "bg-statusRed text-deepRed border-statusRed" : ""}
-			${isQueued ? "text-principalRoyalBlue border-principalRoyalBlue" : ""}
-			${isDefault ? "text-statusGreen border-votingGreen" : ""}
-
-			${className}
-			`}
+			className={`${buttonClasses.join(" ")} ${className}`}
 			style={{ ...preDefinedSizes, ...(style || {}) }}
 			{...props}
 		>
-			<span
-				style={markerSize}
-				className={`
-				inline-block
-				rounded-full
-				mr-2
-				${isSuccess ? "bg-statusGreen" : ""}
-				${isFailed ? "bg-deepRed" : ""}
-				${isQueued ? "bg-principalRoyalBlue" : ""}
-				${isDefault ? "bg-statusGreen" : ""}
-				`}
-			/>
+			<span style={markerSize} className={`${markerClasses.join(" ")}`} />
 			{isSuccess
 				? "Executed"
 				: isFailed
