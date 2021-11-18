@@ -23,15 +23,13 @@ export default function Text({
 	variant,
 	...props
 }: TextProps) {
+	const bodyTextClasses = [
+		"text-base",
+		...(ignoreColor ? [] : ["text-textGrey"]),
+	];
 	const bodyText = (
 		<p
-			className={`
-			text-base
-
-			${ignoreColor ? "" : "text-textGrey"}
-			
-			${className || ""}
-			`}
+			className={`${bodyTextClasses.join(" ")} ${className || ""}`}
 			{...props}
 		>
 			{children}
@@ -40,16 +38,14 @@ export default function Text({
 
 	switch (variant) {
 		case TextVariant.Header:
+			const headerClasses = [
+				"font-bold",
+				"text-l28",
+				...(ignoreColor ? [] : ["text-principalRoyalBlue"]),
+			];
 			return (
 				<h1
-					className={`
-					font-bold
-					text-l28
-					
-					${ignoreColor ? "" : "text-principalRoyalBlue"}
-
-					${className || ""}
-					`}
+					className={`${headerClasses.join(" ")} ${className || ""}`}
 					{...props}
 				>
 					{children}
@@ -57,15 +53,15 @@ export default function Text({
 			);
 
 		case TextVariant.SecondaryHeader:
+			const secondaryHeaderClasses = [
+				"text-l22",
+				...(ignoreColor ? [] : ["text-principalRoyalBlue"]),
+			];
 			return (
 				<h2
-					className={`
-					text-l22
-					
-					${ignoreColor ? "" : "text-principalRoyalBlue"}
-
-					${className || ""}
-						`}
+					className={`${secondaryHeaderClasses.join(" ")}${
+						className || ""
+					}`}
 					{...props}
 				>
 					{children}
@@ -73,16 +69,16 @@ export default function Text({
 			);
 
 		case TextVariant.SubHeader:
+			const subHeaderClasses = [
+				"font-medium",
+				"text-l22",
+				...(ignoreColor ? [] : ["text-yieldLightBlue"]),
+			];
 			return (
 				<h3
-					className={`
-					font-medium
-					text-l22
-					
-					${ignoreColor ? "" : "text-yieldLightBlue"}
-
-					${className || ""}
-						`}
+					className={`${subHeaderClasses.join(" ")} ${
+						className || ""
+					}`}
 					{...props}
 				>
 					{children}
@@ -90,15 +86,15 @@ export default function Text({
 			);
 
 		case TextVariant.Navigation:
+			const navigationClasses = [
+				"text-xl",
+				...(ignoreColor ? [] : ["text-principalRoyalBlue"]),
+			];
 			return (
 				<h4
-					className={`
-					text-xl
-					
-					${ignoreColor ? "" : "text-principalRoyalBlue"}
-					
-					${className || ""}
-						`}
+					className={`${navigationClasses.join(" ")} ${
+						className || ""
+					}`}
 					{...props}
 				>
 					{children}
@@ -106,16 +102,16 @@ export default function Text({
 			);
 
 		case TextVariant.ActiveNavigation:
+			const activeNavigationClasses = [
+				"text-xl",
+				"font-bold",
+				...(ignoreColor ? [] : ["text-principalRoyalBlue"]),
+			];
 			return (
 				<h4
-					className={`
-					text-xl
-					font-bold
-					
-					${ignoreColor ? "" : "text-principalRoyalBlue"}
-
-					${className || ""}
-					`}
+					className={`${activeNavigationClasses.join(" ")}${
+						className || ""
+					}`}
 					{...props}
 				>
 					{children}
@@ -123,16 +119,16 @@ export default function Text({
 			);
 
 		case TextVariant.PastNavigation:
+			const pastNavigationClasses = [
+				"text-xl",
+				"opacity-60",
+				...(ignoreColor ? [] : ["text-principalRoyalBlue"]),
+			];
 			return (
 				<h4
-					className={`
-					text-xl
-					opacity-60
-					
-					${ignoreColor ? "" : "text-principalRoyalBlue"}
-
-					${className || ""}
-					`}
+					className={`${pastNavigationClasses.join(" ")} ${
+						className || ""
+					}`}
 					{...props}
 				>
 					{children}

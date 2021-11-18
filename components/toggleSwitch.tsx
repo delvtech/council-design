@@ -30,18 +30,10 @@ export default function ToggleSwitch({
 		onValueChange && onValueChange(id);
 	};
 
+	const classes = ["rounded-regular", "bg-hackerSky", "w-max", "shadow-lg"];
+
 	return (
-		<div
-			className={`
-				rounded-regular
-                bg-hackerSky
-                w-max
-                shadow-lg
-                				
-				${className || ""}
-				`}
-			{...props}
-		>
+		<div className={`${classes.join(" ")} ${className}`} {...props}>
 			<ToggleSwitchContext.Provider
 				value={{ currentSelectionId, onToggle }}
 			>
@@ -67,21 +59,19 @@ export function ToggleSwitchButton({
 	};
 
 	const isActive = currentSelectionId === id.current;
+	const classes = [
+		"rounded-regular",
+		"flex-1",
+		"px-7",
+		"py-3",
+		"text-principalRoyalBlue",
+		"font-medium",
+		...(isActive ? ["bg-paleLily"] : []),
+	];
 
 	return (
 		<button
-			className={`
-                rounded-regular
-                flex-1
-                px-7
-                py-3
-                text-principalRoyalBlue
-                font-medium
-
-                ${isActive ? "bg-paleLily" : ""}
-                
-                ${className || ""}
-                `}
+			className={`${classes.join(" ")} ${className || ""}`}
 			onClick={handleClick}
 			{...props}
 		>

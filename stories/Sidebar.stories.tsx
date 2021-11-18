@@ -1,12 +1,13 @@
+import { Meta, Story } from "@storybook/react";
 import { useState } from "react";
-import { Link, Sidebar } from "../components";
+import { Link, Sidebar, SidebarProps } from "../components";
 
 export default {
 	title: "Sidebar",
 	component: Sidebar,
-};
+} as Meta;
 
-const SidebarTemplate = (args) => {
+const SidebarTemplate: Story<SidebarProps> = (args) => {
 	const [index, setIndex] = useState(0);
 
 	return (
@@ -47,7 +48,7 @@ const SidebarTemplate = (args) => {
 	);
 };
 
-const Template = (args) => <SidebarTemplate {...args} />;
+const Template: Story<SidebarProps> = (args) => <SidebarTemplate {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

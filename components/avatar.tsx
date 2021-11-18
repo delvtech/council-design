@@ -26,13 +26,12 @@ export default function Avatar({
 		backgroundColor: generateRandomColor(),
 	};
 
+	const classes = ["inline-block", "rounded-full"];
+
 	return (
 		<svg
 			viewBox={`0 0 ${dimension} ${dimension}`}
-			className={`
-                inline-block
-                rounded-full
-                `}
+			className={`${classes.join(" ")}`}
 			style={{
 				...rootSize,
 				...style,

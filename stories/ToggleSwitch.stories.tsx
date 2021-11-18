@@ -1,12 +1,13 @@
+import { Meta, Story } from "@storybook/react";
 import React, { useState } from "react";
 import { ToggleSwitch, ToggleSwitchButton } from "../components";
 
 export default {
 	title: "ToggleSwitch",
 	component: ToggleSwitch,
-};
+} as Meta;
 
-const ControlledToggleSwitch = () => {
+const ControlledToggleSwitch: Story = () => {
 	const [value, setValue] = useState("");
 
 	return (
@@ -25,15 +26,15 @@ const ControlledToggleSwitch = () => {
 	);
 };
 
-const Template = (args) => (
-	<ToggleSwitch {...args}>
+const Template: Story = () => (
+	<ToggleSwitch>
 		<ToggleSwitchButton>Option 1</ToggleSwitchButton>
 		<ToggleSwitchButton>Option 2</ToggleSwitchButton>
 		<ToggleSwitchButton>Option 3</ToggleSwitchButton>
 	</ToggleSwitch>
 );
 
-const ControlledTemplate = (args) => <ControlledToggleSwitch {...args} />;
+const ControlledTemplate: Story = () => <ControlledToggleSwitch />;
 
 export const Default = Template.bind({});
 Default.args = {};

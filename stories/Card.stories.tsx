@@ -1,11 +1,12 @@
-import { Card, CardVariant, Text } from "../components";
+import { Meta, Story } from "@storybook/react";
+import { Card, CardProps, CardVariant, Text } from "../components";
 
 export default {
 	title: "Card",
 	component: Card,
-};
+} as Meta;
 
-const Template = (args) => (
+const Template: Story<CardProps> = (args) => (
 	<Card {...args}>
 		<Text>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque cum
@@ -16,7 +17,7 @@ const Template = (args) => (
 	</Card>
 );
 
-const TemplatePrimary = (args) => (
+const TemplatePrimary: Story<CardProps> = (args) => (
 	<Card {...args}>
 		<Text className="text-white" ignoreColor>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque cum

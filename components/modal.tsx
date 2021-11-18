@@ -19,50 +19,48 @@ export default function Modal({ children, open, onClose }: ModalProps) {
 		onClose && onClose();
 	};
 
+	const modalRootClasses = [
+		"flex",
+		"justify-center",
+		"items-center",
+		"fixed",
+		"top-0",
+		"left-0",
+		"h-screen",
+		"w-screen",
+		"box-border",
+		"px-2",
+		"py-10",
+		"md:p-20",
+		"lg:px-52",
+		"lg:py-24",
+		"xxl:px-80",
+		"xxl:py-40",
+	];
+	const backdropClasses = [
+		"fixed",
+		"bg-black",
+		"h-screen",
+		"w-screen",
+		"opacity-40",
+		"z-10",
+	];
+	const cardClasses = [
+		"relative",
+		"z-20",
+		"max-w-xs",
+		"max-w-full",
+		"max-h-full",
+		"overflow-y-auto",
+	];
+
 	return isOpen ? (
-		<div
-			className={`
-			flex
-			justify-center
-			items-center
-			fixed
-			top-0
-			left-0
-			h-screen
-			w-screen
-			box-border
-			px-2
-			py-10
-			md:p-20
-			lg:px-52
-			lg:py-24
-			xxl:px-80
-			xxl:py-40
-			`}
-		>
+		<div className={`${modalRootClasses.join(" ")}`}>
 			<div
-				className={`
-				fixed
-				bg-black
-				h-screen
-				w-screen
-				opacity-40
-				z-10
-				`}
+				className={`${backdropClasses.join(" ")}`}
 				onClick={handleClose}
 			/>
-			<Card
-				className={`
-				relative
-				z-20
-				max-w-xs
-				max-w-full
-				max-h-full
-				overflow-y-auto
-				`}
-			>
-				{children}
-			</Card>
+			<Card className={`${cardClasses.join(" ")}`}>{children}</Card>
 		</div>
 	) : (
 		<></>

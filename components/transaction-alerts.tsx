@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Done, DoneAll, HourGlass, Refresh, Warning } from "./icons";
+import { Done, DoneAll, HourGlass, Refresh, Warning } from "../icons";
 
 export enum TransactionAlertsVariant {
 	ApproveTransaction = "ApproveTransaction",
@@ -24,124 +24,99 @@ export default function TransactionAlerts({
 		height: "56px",
 	};
 
+	const twoItemClasses = [
+		"border",
+		"border-solid",
+		"border-principalRoyalBlue",
+		"rounded-regular",
+		"flex",
+		"items-center",
+		"justify-center",
+		"text-principalRoyalBlue",
+		"text-lg",
+		"font-medium",
+	];
+	const threeItemClasses = [
+		"border",
+		"border-solid",
+		"border-principalRoyalBlue",
+		"rounded-regular",
+		"flex",
+		"items-center",
+		"justify-between",
+		"text-principalRoyalBlue",
+		"text-lg",
+		"font-medium",
+	];
+
 	switch (variant) {
 		case TransactionAlertsVariant.ApproveTransaction:
 			return (
-				<div
-					className={`
-					border
-					border-solid
-					border-principalRoyalBlue
-					rounded-regular
-					flex
-					items-center
-					justify-between
-					text-principalRoyalBlue
-					text-lg
-					font-medium
-					`}
+				<button
+					className={`${threeItemClasses.join(" ")}`}
 					style={alertSize}
+					onClick={onClick}
 				>
 					<HourGlass fill="#005EBE" className="animate-spin ml-6" />
 					Approve Transaction
-					<button onClick={onClick}>
+					<div>
 						<Done fill="#005EBE" className="mr-5" />
-					</button>
-				</div>
+					</div>
+				</button>
 			);
 
 		case TransactionAlertsVariant.TransactionApproved:
 			return (
-				<div
-					className={`
-					border
-					border-solid
-					border-principalRoyalBlue
-					rounded-regular
-					flex
-					items-center
-					justify-center
-					text-principalRoyalBlue
-					text-lg
-					font-medium
-					`}
+				<button
+					className={`${twoItemClasses.join(" ")}`}
 					style={alertSize}
+					onClick={onClick}
 				>
 					<DoneAll className="mr-3.5" />
 					Transaction Approved
-				</div>
+				</button>
 			);
 
 		case TransactionAlertsVariant.TransactionRejected:
 			return (
-				<div
-					className={`
-					border
-					border-solid
-					border-principalRoyalBlue
-					rounded-regular
-					flex
-					items-center
-					justify-between
-					text-principalRoyalBlue
-					text-lg
-					font-medium
-					`}
+				<button
+					className={`${threeItemClasses.join(" ")}`}
 					style={alertSize}
+					onClick={onClick}
 				>
 					<Warning className="ml-6" />
 					Transaction Rejected
-					<button onClick={onClick}>
+					<div>
 						<Refresh className="mr-5" />
-					</button>
-				</div>
+					</div>
+				</button>
 			);
 
 		case TransactionAlertsVariant.ApproveStaking:
 			return (
-				<div
-					className={`
-					border
-					border-solid
-					border-principalRoyalBlue
-					rounded-regular
-					flex
-					items-center
-					justify-between
-					text-principalRoyalBlue
-					text-lg
-					font-medium
-					`}
+				<button
+					className={`${threeItemClasses.join(" ")}`}
 					style={alertSize}
+					onClick={onClick}
 				>
 					<HourGlass fill="#005EBE" className="animate-spin ml-6" />
 					Approve Staking
-					<button onClick={onClick}>
+					<div>
 						<Done fill="#005EBE" className="mr-5" />
-					</button>
-				</div>
+					</div>
+				</button>
 			);
 
 		case TransactionAlertsVariant.StakingApproved:
 			return (
-				<div
-					className={`
-					border
-					border-solid
-					border-principalRoyalBlue
-					rounded-regular
-					flex
-					items-center
-					justify-center
-					text-principalRoyalBlue
-					text-lg
-					font-medium
-					`}
+				<button
+					className={`${twoItemClasses.join(" ")}`}
 					style={alertSize}
+					onClick={onClick}
 				>
 					<DoneAll className="mr-3.5" />
 					Staking Approved
-				</div>
+				</button>
 			);
 
 		default:

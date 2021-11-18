@@ -1,11 +1,12 @@
-import { Text, TextVariant } from "../components";
+import { Meta, Story } from "@storybook/react";
+import { Text, TextProps, TextVariant } from "../components";
 
 export default {
 	title: "Text",
 	component: Text,
-};
+} as Meta;
 
-const Template = (args) => (
+const Template: Story<TextProps> = (args) => (
 	<Text {...args}>
 		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
 		numquam quidem voluptate voluptatibus rem sint, suscipit neque
@@ -14,7 +15,9 @@ const Template = (args) => (
 	</Text>
 );
 
-const ShortTextTemplate = (args) => <Text {...args}>Short Text</Text>;
+const ShortTextTemplate: Story<TextProps> = (args) => (
+	<Text {...args}>Short Text</Text>
+);
 
 export const DefaultBody = Template.bind({});
 DefaultBody.args = {
