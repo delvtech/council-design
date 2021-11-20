@@ -17,6 +17,6 @@
 		"rootDir": ".",
 		"baseUrl": "."
 	},
-	"include": ["components", "icons", "stories"],
+	"include": ["components", "icons", "stories", "src"],
 	"exclude": ["node_modules"]
 }

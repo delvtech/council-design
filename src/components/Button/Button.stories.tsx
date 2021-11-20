@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import Button from "./Button";
-import { ButtonVariant } from "src/ui/base/Button/styles";
+import { ButtonVariant } from "src/components/Button/styles";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

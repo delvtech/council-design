@@ -1,6 +1,5 @@
 import { ReactElement } from "react";
 import tw, { TPseudoClasses, TTextColor } from "src/elf-tailwindcss-classnames";
-import { t } from "ttag";
 
 export interface TabInfo {
   id: string;
@@ -14,9 +13,12 @@ interface TabsProps {
   tabs: TabInfo[];
   "aria-label": string;
 }
-export default function Tabs({ tabs }: TabsProps): ReactElement {
+export default function Tabs({
+  tabs,
+  "aria-label": ariaLabel,
+}: TabsProps): ReactElement {
   return (
-    <nav className={tw("-mb-px", "flex")} aria-label={t`Tabs`}>
+    <nav className={tw("-mb-px", "flex")} aria-label={ariaLabel}>
       {tabs.map((tab, i) => {
         const className = tw(
           "border-gray-200",

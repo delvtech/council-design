@@ -4,7 +4,7 @@ import { MouseEventHandler, ReactElement, ReactNode } from "react";
 
 import classNames from "classnames";
 import tw from "src/elf-tailwindcss-classnames";
-import { ButtonStyles, getButtonClass } from "src/ui/base/Button/styles";
+import { ButtonStyles, getButtonClass } from "src/components/Button/styles";
 
 import { Spinner } from "./Spinner";
 

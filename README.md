@@ -13,6 +13,11 @@ Generate the CSS file using Tailwind.
 ```bash
 npm run build:tailwind
 ```
+Generate the Tailwind classnames codegen.
+
+```bash
+npm run build:tailwind
+```
 
 To, run the development server use:
 

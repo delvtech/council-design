@@ -2,8 +2,8 @@
 import React, { ReactElement, ReactNode } from "react";
 import { Popover } from "@headlessui/react";
 import tw from "src/elf-tailwindcss-classnames";
-import { ButtonProps } from "src/ui/base/Button/Button";
-import { getButtonClass } from "src/ui/base/Button/styles";
+import { ButtonProps } from "src/components/Button/Button";
+import { getButtonClass } from "src/components/Button/styles";
 
 interface PopoverButtonProps extends ButtonProps {
   popover: ReactNode;
