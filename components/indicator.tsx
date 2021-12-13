@@ -11,7 +11,7 @@ export default function Indicator({
 	children,
 	isActive,
 }: IndicatorProps) {
-	const color = accent ? "votingGreen" : "goldYellow";
+	const color = accent ? tw("bg-votingGreen") : tw("bg-goldYellow");
 
 	const indicatorRootClasses = ["relative", "inline-block"];
 	const indicatorPositionClasses = [
